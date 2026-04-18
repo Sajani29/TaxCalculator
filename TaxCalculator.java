@@ -11,6 +11,8 @@ class TaxCalculator{
 		System.out.println("\t\t\t\t\t| $$\\$$      $| $$     \\  | $$");
 		System.out.println("\t\t\t\t\t \\$$ \\$$$$$$   \\$$$$$$$$   \\$$");
 		
-		System.out.println("..");
+		System.out.println("  ______        __  __    ____         _     ____     _   _   _        ______   ____   ____");
+		System.out.println(" |__  __|   /\\  \\ \\/ /   / ___|   /\\  | |   /    |   | | | | | |  /\\  |__  __| / __ \\ | __ \\");
+		System.out.println("   | |     /  \\  \\ V /");
 	}
 }
