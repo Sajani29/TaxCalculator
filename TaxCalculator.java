@@ -10,5 +10,7 @@ class TaxCalculator{
 		System.out.println("\t\t\t\t\t| $| $$___/   | $$_____   | $$");
 		System.out.println("\t\t\t\t\t| $$\\$$      $| $$     \\  | $$");
 		System.out.println("\t\t\t\t\t \\$$ \\$$$$$$   \\$$$$$$$$   \\$$");
+		
+		System.out.println("..");
 	}
 }
