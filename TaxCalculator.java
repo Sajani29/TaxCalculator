@@ -99,7 +99,50 @@ class TaxCalculator{
 			}
 			
 		}
+
+	}
+	
+	public static void dividendTax(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------+");
+		System.out.println("|\t\t DIVIDEND TAX\t\t\t|");
+		System.out.println("+------------------------------------------------+");
+		double dividendTax = 0;
+		L1:while (true)
+		{
+			System.out.print("Enter your total dividend per year \t :");
+			int dividend = input.nextInt();
+			if (dividend > 0)
+			{
+				if (100000 < dividend)
+				{
+					dividendTax = dividend * 14/100;
+					System.out.print("\n\tYou have to pay Dividend  Tax per year:"+dividendTax);
+					break;
 		
+				}else
+				{
+					System.out.println("\nYou dont have to pay Dividend tax...\n");
+		
+				}
+			}else
+			{
+				System.out.println("\n\tInvalid input...\n");
+				continue L1;
+			}
+			
+		}
+		System.out.println();
+		System.out.println();
+		System.out.print("Do you want to calculate another Dividend Tax (Y/N) : ");
+			char yesOrno = input.next().charAt(0);
+			if (yesOrno == 'Y' || yesOrno == 'y')
+			{
+				dividendTax();
+			}if(yesOrno == 'N' || yesOrno == 'n')
+			{
+				main(null);
+			}
 		
 	}
 	public static void withholdingTax(){
@@ -130,7 +173,7 @@ class TaxCalculator{
 				break;
 				
 			case 3:
-				
+				dividendTax();
 				break;
 				
 			case 4:
@@ -140,6 +183,281 @@ class TaxCalculator{
 		}
 		
 	}
+	
+	public static void payableTax(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------+");
+		System.out.println("|\t\t PAYABLE TAX\t\t\t|");
+		System.out.println("+------------------------------------------------+");
+		L1:while (true)
+		{
+			System.out.print("Enter your employee payment per month : ");
+			int employeePayment = input.nextInt();
+			double payableTax = 0;
+			if (employeePayment > 0)
+			{
+				if (employeePayment <= 100000)
+				{
+					System.out.println("\t You don't have to pay Payable Tax..");
+				}else
+				{
+					if (employeePayment > 308333)
+					{
+						payableTax = employeePayment * 36/100;
+					}else if (employeePayment >266667 )
+					{
+						payableTax = employeePayment * 30/100;
+					}else if (employeePayment > 225000)
+					{
+						payableTax = employeePayment * 24/100;
+					}else if (employeePayment > 183333)
+					{
+						payableTax = employeePayment * 18/100;
+					}else if (employeePayment > 141667)
+					{
+						payableTax = employeePayment * 12/100;
+						
+					}else
+					{
+						payableTax = employeePayment * 6/100;
+					}
+					
+					System.out.println("You have to pay Payable Tax per month : "+payableTax);
+				}
+			}else
+			{
+				System.out.println("\n\tInvalid input...\n");
+				continue L1;
+			}
+				System.out.println();
+				System.out.println();
+				System.out.print("Do you want to calculate another Dividend Tax (Y/N) : ");
+				char yesOrno = input.next().charAt(0);
+					if (yesOrno == 'Y' || yesOrno == 'y')
+					{
+						payableTax();
+					}if(yesOrno == 'N' || yesOrno == 'n')
+					{
+						main(null);
+					}
+		}
+		
+	}
+	public static void incomeTax(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------+");
+		System.out.println("|\t\t Income TAX\t\t\t|");
+		System.out.println("+------------------------------------------------+");
+		L1:while (true)
+		{
+			System.out.print("Enter your total income per year\t : ");
+			int totalIncome = input.nextInt();
+			double incomeTax = 0;
+			if (totalIncome > 0)
+			{
+				if (totalIncome <= 1200000)
+				{
+					System.out.println("\t You don't have to pay Income Tax..");
+				}else
+				{
+					if (totalIncome > 3700000)
+					{
+						incomeTax = totalIncome * 36/100;
+					}else if (totalIncome >3200000 )
+					{
+						incomeTax = totalIncome * 30/100;
+					}else if (totalIncome > 2200000)
+					{
+						incomeTax = totalIncome * 24/100;
+					}else if (totalIncome > 1700000)
+					{
+						incomeTax = totalIncome * 18/100;
+					}else if (totalIncome > 1700000)
+					{
+						incomeTax = totalIncome * 12/100;
+						
+					}else
+					{
+						incomeTax = totalIncome * 6/100;
+					}
+					
+					System.out.println("You have to pay Income Tax per month : "+incomeTax);
+				}
+			}else
+			{
+				System.out.println("\n\tInvalid input...\n");
+				continue L1;
+			}
+				System.out.println();
+				System.out.println();
+				System.out.print("Do you want to calculate another Income Tax (Y/N) : ");
+				char yesOrno = input.next().charAt(0);
+					if (yesOrno == 'Y' || yesOrno == 'y')
+					{
+						incomeTax();
+					}if(yesOrno == 'N' || yesOrno == 'n')
+					{
+						main(null);
+					}
+					
+		}
+		
+	}
+	
+	public static void ssclTax(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------------------------+");
+		System.out.println("|\t\t SOCIAL SECURITY CONTRIBUTION LEVY (SSCL) TAX  \t|");
+		System.out.println("+------------------------------------------------------------------+");
+		L1:while (true)
+		{
+			System.out.print("Enter value of Good or Services : ");
+			int valueOfGood = input.nextInt();
+			double saleTax = 0;
+			double totalSsclTax = 0;
+			double valueOfGoodSaleTaxAdd =0;
+			double valueOfGoodSaleVatAdd = 0;
+			if (valueOfGood > 0)
+			{
+				saleTax = valueOfGood * 2.5/100;
+				valueOfGoodSaleTaxAdd = valueOfGood + saleTax;
+				valueOfGoodSaleVatAdd = valueOfGoodSaleTaxAdd * 15/100;
+				totalSsclTax = saleTax + valueOfGoodSaleVatAdd;
+				System.out.println("You have to pay SSCL Tax\t: "+totalSsclTax);
+			}else
+			{
+				System.out.println("\n\tInvalid input...\n");
+				continue L1;
+			}
+				System.out.println();
+				System.out.println();
+				System.out.print("Do you want to calculate another Income Tax (Y/N) : ");
+				char yesOrno = input.next().charAt(0);
+					if (yesOrno == 'Y' || yesOrno == 'y')
+					{
+						incomeTax();
+					}if(yesOrno == 'N' || yesOrno == 'n')
+					{
+						main(null);
+					}
+		}	
+	}
+	
+	public static void leasingPayment(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------+");
+		System.out.println("|\t\t Leasing Payment\t\t|");
+		System.out.println("+------------------------------------------------+");
+		System.out.println();
+		System.out.println("\t[1] Calculate Monthly Installment ");
+		System.out.println();
+		System.out.println("\t[2] Search Leasing Category");
+		System.out.println();
+		System.out.println("\t[3] Find Leasing Amount");
+		System.out.println();
+		System.out.println("\t[4] Exit");
+		System.out.println();
+		System.out.print("Enter an option to continue ->");
+		int option = input.nextInt();
+		
+		switch (option)
+		{
+			case 1:
+				//calculateMonthlyInstallment();
+				break;
+				
+			case 2:
+				searchLeasingCategory();
+				break;
+				
+			case 3:
+				findLeasingAmount();
+				break;
+				
+			case 4:
+				return;
+			default:
+				System.out.println("Invalid input");
+		}
+	}
+	/*public static void calculateMonthlyInstallment(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("+------------------------------------------------------------------+");
+		System.out.println("|\t\t Calculate Leasing Payment       \t\t  |");
+		System.out.println("+------------------------------------------------------------------+");
+		L1:while (true){
+			System.out.print("Enter lease amount\t: ");
+			double leaseAmount = input.nextDouble();
+			
+			double monthlyInstallment = 0;
+			
+			if (leaseAmount > 0)
+			{
+				
+					System.out.print("Enter annual interest rate : ");
+					double annualInterestRate = input.nextDouble();
+					
+					System.out.print("Enter number of year \t:");
+					int year = input.nextInt();
+					
+					if (annualInterestRate > 0)
+					{
+						if (year <=5)
+						{
+							monthlyInstallment = leaseAmount * (annualInterestRate/12) / ( 1 - (1 / Math.pow(1 + (annualInterestRate/12),(12*year)) ));
+							System.out.println("Your monthly instalment\t: "+monthlyInstallment);
+						}else
+						{
+							
+						}
+					}
+					
+					
+					if (annualInterestRate > 0)
+					{
+						L3:while (true)
+						{
+							System.out.print("Enter number of year \t:");
+							int year = input.nextInt();
+							if (year <=5)
+							{
+								monthlyInstallment = leaseAmount * (annualInterestRate/12) / ( 1 - (1 / Math.pow(1 + (annualInterestRate/12),(12*year)) ));
+								System.out.println("Your monthly instalment\t: "+monthlyInstallment);
+								break;
+							}else
+							{
+								System.out.print("\t Invalid number of year... Enter the correct value again..\n\n");
+								continue L3;
+							}
+							
+						}	
+					}else
+					{
+						System.out.println("Annual Interest Rate must be grater than 0...");
+						continue L2;
+						
+					}
+
+				
+			}else
+			{
+				System.out.println("\n\tInvalid input...\n");
+				continue L1;
+			}
+			
+		}
+		
+	}*/
+	
+	public static void searchLeasingCategory(){
+		
+	}
+	
+	public static void findLeasingAmount(){
+		
+	}
+	
+	//<======================Main method==========================>
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		System.out.println("\t\t\t\t\t __  ________ ________ ________");
@@ -178,19 +496,19 @@ class TaxCalculator{
 				withholdingTax();
 				break;
 			case 2:
-			
+				payableTax();
 				break;
 				
 			case 3:
-			
+				incomeTax();
 				break;
 				
 			case 4:
-			
+				ssclTax();
 				break;
 				
 			case 5:
-			
+				leasingPayment();
 				break;
 				
 			case 6:
