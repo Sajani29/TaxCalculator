@@ -2,6 +2,9 @@
 
 A Java-based Command Line Interface (CLI) application developed to calculate different types of taxes and leasing payments efficiently. This project was developed as coursework for the Institute of Computer Engineering Technology (iCET).
 
+<img width="606" height="735" alt="image" src="https://github.com/user-attachments/assets/049159f9-8a30-4dac-b4bf-456887c61a9d" />
+
+
 ## 📌 Features
 
 ### 💰 Withholding Tax
